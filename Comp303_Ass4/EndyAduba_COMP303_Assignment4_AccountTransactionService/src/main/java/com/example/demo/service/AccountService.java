@@ -28,7 +28,7 @@ public class AccountService {
             JsonNode orderNode = objectMapper.readTree(orderJson);
             String accountId = orderNode.get("accountId").asText();
             int quantity = orderNode.get("quantity").asInt();
-            double totalCost = quantity * 100;
+            double totalCost = quantity * 10;
             log.info("[Account] accountId={}, quantity={}, totalCost={}", accountId, quantity, totalCost);
 
             Account account = accountRepository.findByAccountId(accountId);
